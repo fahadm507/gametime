@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Teams</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+  <div id="content">
+    <h1><%= @team_name %> Information</h1>
+    <table>
+
+      <tr>
+        <td> <%= @team_name %></td>
+        <td> wins <%= @win %>
+        <td> loss <%= @loss %>
+      </tr>
+      <tr>
+        <th>Home Team</th>
+        <th>Away Team</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td><a><%= @team_home%></a></td>
+        <td><a><%= @team_away%></a></td>
+        <td><%= @home_score %> - <%= @away_score %></td></td>
+      </tr>
+
+    </table>
+
+  </div>
+  </body>
+</html>

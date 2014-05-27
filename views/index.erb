@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Teams</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+  <div id="content">
+    <h1>Leaderboard statistics</h1>
+    <i>click on your favorite team for more information</i>
+    <table>
+      <tr>
+        <th>Home Team</th>
+        <th>Away Team</th>
+        <th>Score</th>
+      </tr>
+      <% @team_info.uniq.each do |team| %>
+      <tr>
+        <td><a href="<%= "/leaderboard/#{team[:home_team]}" %>"><%= team[:home_team]%></a></td>
+        <td><a href="<%= "/leaderboard/#{team[:away_team]} "%>"><%= team[:away_team]%></a></td>
+        <td><%= team[:home_score]%> - <%= team[:away_score]%></td>
+      </tr>
+      <%end%>
+    </table>
+    <h1>Rankings</h1>
+      <ol>
+        <% @teams.each do |team|%>
+          <li><a href="<%= "/leaderboard/#{team}" %>"><%=team %></a></li>
+        <%end%>
+      </ol>
+
+    </ol>
+  </div>
+  </body>
+</html>
